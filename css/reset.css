@@ -1,0 +1,9 @@
+div,p,body,ul,ol,li,input,textarea,h1,h2,h3,h4,h5,h6,dl,dt,dd,img{margin:0;padding:0;}
+body{font-size: 14px;}
+input,textarea,select{border:0;background: none;outline:none;}
+textarea{resize:none;}
+ul,li{list-style: none}
+a{text-decoration: none}
+img{border:none;}
+.clearfix{zoom:1;}
+.clearfix:after{content: '';display: block;clear: both;}

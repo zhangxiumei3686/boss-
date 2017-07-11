@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>index()函数</title>
+<style type="text/css">
+span{
+  color:red;
+}
+</style>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+
+</head>
+<body>
+    <p>后台专区</p>
+    <div class='div1'>
+        <p>后台专区1</p>
+        <div id='div2'>后台专区2</div>
+        <div id="qian">前台专区</div>
+    </div>   
+    <p>数据库专区</p>
+    <div class='qian1'>站长交流</div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#btn").click(function(){
+        $("span").text($('div').index(document.getElementById('div2')));
+      })
+    });
+  </script>
+  <div>当前div元素的位置:<span></span></div>
+  <button id="btn">点击查看结果</button>
+</body>
+</html>

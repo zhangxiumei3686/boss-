@@ -1,6 +1,6 @@
 .conWidth{width:1170px;margin:0 auto;}
 a{color:#61687c;}
-.contentLeft i,#search .select i,#search .button a,.bottomRightp a,.job-page i{background-image: url(../image/icons.png);}
+.contentLeft i,#search .select i,#search .button a,.bottomRightp a,.job-page i,.job-list i{background-image: url(../image/icons.png);}
 
 
 body{background: #F2F2F5;color:#61687c;font-family: arial,verdana,helvetica,'PingFang SC','HanHei SC',STHeitiSC-Light,Microsoft Yahei,sans-serif}
@@ -40,7 +40,7 @@ body{background: #F2F2F5;color:#61687c;font-family: arial,verdana,helvetica,'Pin
 
 
 .contentRight{float: left;width:840px;margin-left:30px;}
-.jobContentRight{margin:20px 0;}
+.jobContentRight{margin:20px 0;position: relative;}
 .jobContent{width:840px;float: left}
 #search{margin-top:20px;}
 #search .text,#search .select{width:504px;height:50px;background: #fff;border-right:1px solid #f0f0f0;float:left;}
@@ -81,10 +81,29 @@ body{background: #F2F2F5;color:#61687c;font-family: arial,verdana,helvetica,'Pin
 .selectItemRight li,.selectItem li{text-indent:35px;color:#9fa3b0;cursor:pointer;font-size: 14px;line-height: 50px}
 .jobContent-img{float:right;width:300px;}
 .job-page{height:50px;line-height: 50px;text-align: center;background:#fff;}
-.job-page .top,.job-page .bot{background-position: 9px -830px;display: inline-block;padding:12px 13px;border:1px solid #e0e0e0;vertical-align: middle;margin:0 20px;}
-.job-page span{margin:0 20px;cursor: pointer}
+.job-page .top,.job-page .bot{background-repeat: no-repeat; background-position: 9px -830px;display: inline-block;padding:12px 13px;border:1px solid #e0e0e0;vertical-align: middle;margin:0 20px;}
+.job-page span{margin:0 10px;cursor: pointer;padding:4px 10px;}
 .job-page .bot{background-position: 10px -883px;}
 .job-page span:hover{color:#55CBC4;transition: all linear .2s}
+.job-page .active{background: #55CBC4;color:#fff;}
+
+
+.job-list-city{background: #fff;float:left;margin:20px 0;padding:0 40px;width:1090px;color:#4a4160;}
+.job-listfir,.job-list{line-height: 52px;border-bottom:1px solid #F8F9FC ;}
+.job-list dt,.job-listfir dt{width:60px;font-size: 16px;}
+.job-list dd,.job-listfir dd{margin-right:10px;margin-top:14px;line-height: 12px;padding:5px 8px;border:1px solid #fff;cursor:pointer;}
+.job-list dt,.job-list dd,.job-listfir dt,.job-listfir dd{float:left;}
+.job-list .active,.job-listfir .active{border-radius: 15px;border:1px solid #DADDE2 ;color:#fc6c38;;}
+.jobTotlei{width:16px;height:16px;display: inline-block;background-position:2px -54px;vertical-align: middle;margin-left:6px;}
+.otherjob{display: none;padding-left:60px;}
+.otherjob dd{margin-top:0;}
+.totledd{cursor:pointer;}
+
+
+
+
+
+
 
 
 
@@ -104,6 +123,7 @@ body{background: #F2F2F5;color:#61687c;font-family: arial,verdana,helvetica,'Pin
 .bottomRightBottom{background-position: 6px -313px;}
 .bottomRight>a{color:#fff;margin-right:20px;}
 .bottomRight span{font-size: 17px;font-weight: 500}
+
 
 
 

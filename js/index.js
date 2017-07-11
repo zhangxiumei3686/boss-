@@ -146,20 +146,124 @@ $(function(){
 		e.preventDefault();
 	})
 
+	var number=0;
+
 	$('.job-page em').eq(0).css('display','none');
+	$('.job-page span').eq(0).addClass('active');
+	$('.job-page span').hover(function(){
+		if($(this).index('.job-page span')==number){
+			$(this).css({'color':'#fff'});
+		}
+	},function(){
+		if($(this).index('.job-page span')==number){
+			$(this).css({'color':'#fff'});
+		}		
+	})
+	
 	$('.job-page span').each(function(index,element){
 		if(index>=3){
 			$(element).css('display','none');
 		}				
 	})
 	$('.job-page span').click(function(){
-		
-	})
-	$('.top,.bot').hover(function(){
+		$('.job-page span').removeClass('active').css('color','#61687c');
+		$(this).addClass('active');
+		number=$(this).index('.job-page span');
 
+		$('.job-page span').hover(function(){
+			if($(this).index('.job-page span')==number){
+				$(this).css({'color':'#fff'});
+			}
+		},function(){
+			if($(this).index('.job-page span')==number){
+				$(this).css({'color':'#fff'});
+			}		
+		})
+		if(number>=5){
+
+		}
+		$('.job-page em').eq($('.job-page em').length-1).css('display','');
+		$('.job-page em').eq(0).css('display','none');
+		if(number>=$('.job-page span').length-3){
+			$('.job-page em').eq($('.job-page em').length-1).css('display','none');
+		}
+		if(number>=3&&number<=$('.job-page span').length-3){
+			$('.job-page em').eq(0).css('display','');
+			$('.job-page span').each(function(index,element){
+				if(number>index){
+					$(element).css('display','none');
+				}
+				$('.job-page span').eq(0).css('display','');
+				$('.job-page span').eq(number-1).css('display','');
+				$('.job-page span').eq(number-2).css('display','');
+			})
+		}else if(number>$('.job-page span').length-3){
+			$('.job-page em').eq(0).css('display','');
+		}
+		$('.job-page span').eq(number+1).css('display','');
+		$('.job-page span').eq(number+2).css('display','');
+		$('.job-page span').each(function(index,element){
+			if(number+3<=$('.job-page span').length-1&&number+3<=index){
+				$(element).css('display','none');
+			}
+		})
+	})
+	$('.top').hover(function(){
+		if(number!=0){
+			$(this).css({'backgroundPosition':'9px -856px','cursor':'pointer'})
+		}
 	},function(){
+		$(this).css({'backgroundPosition':'9px -830px','cursor':'default'})
+	})
+	$('.bot').hover(function(){
+		if(number!=$('.job-page span').length-1){
+			$(this).css({'backgroundPosition':'10px -912px','cursor':'pointer'})
+		}
+	},function(){
+		$(this).css({'backgroundPosition':'10px -883px','cursor':'default'})
+	})
+
+	var clickNum=0;
+	var clickdd=0;
+	var flag=true;
+	$('.job-list dd').click(function(){
+		flag=true;
+		if($(this).get(0).className.indexOf('limit')!=-1){
+			$(this).parent().find('dd').removeClass('active');
+			$(this).addClass('active');
+		}else{
+			$(this).parent().find('dd').eq(0).removeClass('active');
+			if($(this).get(0).className.indexOf('active')!=-1){
+				$(this).removeClass('active');
+			}else{
+				$(this).addClass('active');
+			}
+		}
+		$(this).parent().find('dd').each(function(index,element){
+			if(index>=1 && element.className.indexOf('active')!=-1){
+				flag=false;
+				return;
+			}
+		})
+		alert(flag)
+		if(flag){
+			$(this).parent().find('dd').eq(0).addClass('active');
+		}
 
 	})
+	$('.totledd').click(function(){
+		if(clickNum%2==0){
+			$('.totledd').css('color','#fc6c38');
+			$('.jobTotlei').css('backgroundPosition','1px -87px');
+			$('.otherjob').css('display','block');
+		}else{
+			$('.totledd').css('color','#4a4160');
+			$('.jobTotlei').css('backgroundPosition','2px -54px');
+			$('.otherjob').css('display','none');
+		}
+		clickNum++;
+	})
+
 })
 
 

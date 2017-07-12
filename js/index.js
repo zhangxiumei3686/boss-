@@ -245,7 +245,6 @@ $(function(){
 				return;
 			}
 		})
-		alert(flag)
 		if(flag){
 			$(this).parent().find('dd').eq(0).addClass('active');
 		}
@@ -263,6 +262,64 @@ $(function(){
 		}
 		clickNum++;
 	})
+
+	var jobIndex=0;
+	var jobIndexNext=0;
+	$('.job-listfir .job-listfir,.job-listfir .job-list').css('display','none');
+	$('.job-top>dd').click(function(){
+		var temp=$(this).text();
+		var tempindex=$(this).index($('.job-listfir>dd'));
+		$(this).text($('.prespan').text());
+		$('.prespan').text(temp);
+		$(this).parent().find('i').eq(0).css('display','inline-block');
+		$('.listLimitpre').css('display','inline-block');
+		$('.job-listse').eq(tempindex).find('.job-listfir').css('display','block');
+		$('.job-listse').eq(tempindex).find('.job-listfir dd').click(function(){
+			$('.job-top i').eq(1).css('display','inline-block');
+			$('.listLimitnext').css('display','inline-block');
+			$(this).parent().css('display','none');
+			$('.job-listse').eq(tempindex).find('.job-list').css('display','block');
+			$('.listLimitpre').text($(this).text());
+			jobIndex=$(this).index()-1;
+		})
+		$('.job-listse').eq(tempindex).find('.job-list dd').click(function(){			
+			$('.job-listse').eq(tempindex).find('.job-list dd').each(function(index,element){
+				$(element).removeClass('active');
+			})
+			$(this).addClass('active');
+			$('.listLimitnext').text($(this).text());
+			jobIndexNext=$(this).index();
+		})
+
+		$('.listLimitpre').click(function(index,element){
+			$('.job-listse').eq(tempindex).find('.job-listfir').css('display','block');
+			$('.job-listse').eq(tempindex).find('.job-list').css('display','none');
+			$('.job-listse').eq(tempindex).find('.job-listfir dd').removeClass('active');
+			$('.job-listse').eq(tempindex).find('.job-listfir dd').eq(jobIndex).addClass('active');
+		})
+
+		$('.listLimitnext').click(function(index,element){
+			$('.job-listse').eq(tempindex).find('.job-listfir').css('display','none');
+			$('.job-listse').eq(tempindex).find('.job-list').css('display','block');
+			$('.job-listse').eq(tempindex).find('.job-list dd').removeClass('active');
+			$('.job-listse').eq(tempindex).find('.job-list dd').eq(jobIndexNext).addClass('active');
+		})
+
+		$('.prespan').click(function(){
+			$('.job-listse').eq(tempindex).find('.job-listfir dd').removeClass('active');
+			$('.job-listse').eq(tempindex).find('.job-listfir dd').eq(0).addClass('active');
+			$('.job-listse').eq(tempindex).find('.job-list dd').removeClass('active');
+			$('.job-listse').eq(tempindex).find('.job-list dd').eq(0).addClass('active');
+			$('.job-listse').eq(tempindex).find('.job-listfir').css('display','block');
+			$('.job-listse').eq(tempindex).find('.job-list').css('display','none');
+			$('.job-top i').eq(1).css('display','none');
+			$('.listLimitpre').text('不限');
+			$('.listLimitnext').css('display','none').text('不限');
+			jobIndexNext=0;
+			jobIndex=0;
+		})
+	})
+
 
 })
 

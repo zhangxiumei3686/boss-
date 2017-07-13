@@ -1,0 +1,29 @@
+body{font-family:arial,verdana,helvetica,'PingFang SC','HanHei SC',STHeitiSC-Light,Microsoft Yahei,sans-serif;}
+#login{background:#5DD5C8 url(../image/newbg.png) no-repeat center bottom;}
+.login-logo{margin-left:60px;margin-top:56px;display: inline-block;width:246px;}
+.login-logo span{float:right;font-size: 18px;font-weight: 400;color: #fff;line-height:26px;margin-top:4px;}
+.login-form{width:324px;background: #fff;position: absolute;left:50%;top:50%;margin:-268px 0 0 -205px;border-radius: 8px;box-shadow:1px 2px 15px rgba(0,0,0,.3);padding:32px 43px 0;}
+.login-form h2{text-align: center;color:#5dd5c8;font-size: 26px;font-weight: 400}
+.login-list{margin-top:30px;border-bottom:2px #F2F5F9 solid;}
+.login-list li{float:left;width:70px;line-height: 45px}
+.login-list li span{color:#9fa3b0;}
+.loginli-mid{margin:0 57px;text-align: center}
+.loginli-bon{text-align: right}
+.form1{margin-top:46px;}
+.form1 input,.test{width:225px;padding-left:95px;border:1px solid #E3E7ED;height:42px;}
+.input1{position: relative;margin-bottom:25px;}
+.form1 i{background-image: url(../image/icons-sign.png);width:20px;height:20px;display: inline-block;position: absolute;}
+.i1{background-position: 2px 1px;background-repeat: no-repeat;left:9px;top:11px;}
+.i2{background-position: 2px -91px;background-repeat: no-repeat;left:9px;top:11px;}
+.i3{background-position: 2px -44px;background-repeat: no-repeat;left:9px;top:11px;}
+.test{overflow: hidden;position: relative;margin-bottom:45px;}
+.test img{float:right;margin-top:-7px;}
+input.submit{width:320px;background:#55CBC4;color:#fff;text-align: center;padding:0;font-size: 16px;cursor:pointer;}
+input.submit:hover{background-color:#6ADBCF;transition: all linear .2s}
+.cite{position: absolute;right:237px;top:14px;cursor:pointer;}
+.cite em{margin-left:5px;background: url(../image/icons.png) no-repeat;background-position: 2px -54px;width:16px;height:16px;vertical-align: middle;display: inline-block;}
+
+
+
+.noregite{text-align: center;line-height: 95px;color:#9fa3b0;}
+.noregite a{color:#18c3b1;}

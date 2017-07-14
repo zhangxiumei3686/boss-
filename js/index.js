@@ -320,6 +320,32 @@ $(function(){
 		})
 	})
 
+	$('.newpen li').addClass('lis');
+	var setInteCount=0;
+	var timer=setTimeout(function(){
+		setInte();		
+		clearTimeout(timer);
+	},2000);
+	function setInte(){
+		var timer1=null;
+		timer1=setInterval(function(){
+			$('.newpen li').eq(setInteCount).find('.img1').css('display','block').addClass('imgs');
+			$('.newpen li').eq(setInteCount).find('.img2').css('display','none');
+			setInteCount++;
+			if(setInteCount>4){
+				clearInterval(timer1);
+			} 
+		},1000)
+
+	}
+	$('.newpen li').hover(function(){
+		$(this).find('.img1').css('display','none');
+		$(this).find('.img2').css('display','block');
+	},function(){
+		$(this).find('.img1').css('display','block').removeClass('imgs');
+		$(this).find('.img2').css('display','none');
+	})
+
 
 })
 

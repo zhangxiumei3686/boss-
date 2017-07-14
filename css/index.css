@@ -112,39 +112,155 @@ body{background: #F2F2F5;color:#61687c;font-family: arial,verdana,helvetica,'Pin
 
 
 .app-one{background:#62D5C8 url(../image/app-bg.png) no-repeat center bottom;height:803px;position: relative;}
-.appOneLeft{animation: appleft 1s ease .2s both;-webkit-animation:appleft 1s ease .2s;position: absolute; width:502px;left:170px;background: url(../image/figure-phone-app.png) no-repeat center bottom;height:660px;top:70px;}
-.app-phone{animation:appUp 1s ease 1.3s;width:338px;-webkit-animation:appUp 1s ease 1.3s;width:338px;height:100px;background: url(../image/app-tip.png) no-repeat;position: absolute;top:186px;left:82px;}
-.appOneRight{animation: appRight 1s ease .2s both;-webkit-animation:appRight 1s ease .2s;position:absolute;width:488px;top:210px;left:682px;}
+.appOneLeft{animation: appleft 1s ease forwards;-webkit-animation:appleft 1s ease forwards;position: absolute; width:502px;left:170px;background: url(../image/figure-phone-app.png) no-repeat center bottom;height:660px;top:70px;}
+.app-phone{opacity:0;filter:alpha(opacity=0);animation:appUp 1s ease 1.3s forwards;width:338px;-webkit-animation:appUp 1s ease 1.3s forwards;width:338px;height:100px;background: url(../image/app-tip.png) no-repeat;position: absolute;top:186px;left:82px;}
+.appOneRight{animation: appRight 1s ease  both;-webkit-animation:appRight 1s ease both;position:absolute;width:488px;top:210px;left:682px;}
 .app-text{background: url(../image/app-title.png) no-repeat;width:488px;height:200px;}
 .app-Down{margin-top:45px;position: relative;}
 .app-Down a{background-image: url(../image/app-download-btns.png);width:213px;height:50px;display: block;}
 .app-downAnd{margin-top:20px;background-position: 0px -74px;}
 .app-Down img{position: absolute;left:245px;top:0px;border-radius: 5px;width:124px;height:124px;}
 @keyframes appleft{
-	0%{opacity: 0;-webkit-transform: translateX(-50px);}
-	100%{opacity: 1;-webkit-transform: translateX(0);}
+	0%{opacity: 0;transform: translateX(-50px);}
+	100%{opacity: 1;transform: translateX(0);}
 }
 @-webkit-keyframes appleft{
 	0%{opacity: 0;-webkit-transform: translateX(-50px);}
 	100%{opacity: 1;-webkit-transform: translateX(0);}
 }
 @keyframes appRight{
-	0%{opacity: 0;-webkit-transform: translateX(50px);}
-	100%{opacity: 1;-webkit-transform: translateX(0);}
+	0%{opacity: 0;transform: translateX(50px);}
+	100%{opacity: 1;transform: translateX(0);}
 }
 @-webkit-keyframes appRight{
 	0%{opacity: 0;-webkit-transform: translateX(50px);}
 	100%{opacity: 1;-webkit-transform: translateX(0);}
 }
 @keyframes appUp{
-	0%{opacity: 0;-webkit-transform: translateY(50px);}
-	100%{opacity: 1;-webkit-transform: translateX(0);}
+	0%{opacity: 0;transform: translateY(50px);}
+	100%{opacity: 1;transform: translateY(0);}
 }
 @-webkit-keyframes appUp{
 	0%{opacity: 0;-webkit-transform: translateY(50px);}
-	100%{opacity: 1;-webkit-transform: translateX(0);}
+	100%{opacity: 1;-webkit-transform: translateY(0);}
 }
 
+
+.company-pen{padding:220px 0 110px;}
+.pen-list{position: relative;width:950px;height:422px;margin-top:92px;margin:0 auto;}
+.pen-title{animation:pentitle 1s linear both;-webkit-animation:pentitle 1s linear both;background-position: center 0;background-image:url(../image/text-title.png);height:114px;background-repeat: no-repeat;}
+.pen-logo{animation:penlogo 1s linear both;-webkit-animation:penlogo 1s linear both;position: absolute;z-index:3;left:50%;margin-left:-57px;bottom:80px;width:115px;height:115px;}
+.pen-phone{animation:penphone 1s linear both;-webkit-animation:penphone 1s linear both;background:url(../image/figure-phone-1.png) no-repeat;width:710px;height:152px;position: absolute;bottom:0;left:50%;margin-left:-355px;}
+.newpen{position: absolute;bottom:70px;left:0;height:336px;background: url(../image/figure-line.png) 60px bottom no-repeat;width:100%;}
+.lis{position: absolute;animation:penli 1s linear both;-webkit-animation:penli 1s linear both;}
+.imgs{animation:penimg 1s linear both;-webkit-animation:penimg 1s linear both;}
+.img1{display: none;}
+.img2{display: block}
+.li1{animation-delay: .2s;left:0;top:16px;}
+.li2{animation-delay: .5s;left:296px;top:22px;}
+.li3{animation-delay: .8s;left:573px;top:22px;}
+.li4{animation-delay: 1.1s;left:837px;top:16px;}
+@keyframes pentitle{
+	0%{opacity:0;transform: translateY(-50px);}
+	100%{opacity: 1;transform: translateY(0);}
+}
+@-webkit-keyframes pentitle{
+	0%{opacity: 0;-webkit-transform: translateY(-50px);}
+	100%{opacity: 1;-webkit-transform: translateY(0);}
+}
+@keyframes penphone{
+	0%{opacity:0;transform: translateY(50px);}
+	100%{opacity: 1;transform: translateY(0);}
+}
+@-webkit-keyframes penphone{
+	0%{opacity: 0;-webkit-transform: translateY(50px);}
+	100%{opacity: 1;-webkit-transform: translateY(0);}
+}
+@keyframes penlogo{
+	0%{opacity:0;transform:scale(.3);}
+	25%{opacity:1;transform:scale(1);}
+	50%{transform:scale(1.05);}
+	75%{transform:scale(0.9);}
+	100%{transform:scale(1);}
+}
+@-webkit-keyframes penlogo{
+	0%{opacity:0;transform:scale(.3);}
+	25%{opacity:1;transform:scale(1);}
+	50%{transform:scale(1.05);}
+	75%{transform:scale(0.9);}
+	100%{transform:scale(1);}
+}
+@keyframes penli{
+	0%{opacity:0}
+	100%{opacity: 1}
+}
+@-webkit-keyframes penli{
+	0%{opacity:0}
+	100%{opacity: 1}
+}
+@keyframes penimg{
+	0%{opacity:0.2;transform: scale(1,1);}
+	50%{opacity:0.8;transform: scale(1.1,1.1);}
+	100%{opacity: 1;transform: scale(1,1);}
+}
+@-webkit-keyframes penimg{
+	0%{opacity:0.2;-webkit-transform: scale(1,1);}
+	50%{opacity:0.8;-webkit-transform: scale(1.1,1.1);}
+	100%{opacity: 1;-webkit-transform: scale(1,1);}
+}
+.resume{background: #59CAC2;height:925px;}
+.inner{width:1170px;margin:0 auto;}
+.resumeLeft{animation:resumeleft 1s linear both .2s;-webkit-animation:resumeleft 1s linear both .2s;margin-top:160px;position: relative; background: url(../image/figure-phone-2.png) no-repeat center center;float:left;width:500px;height:664px;}
+.chat{overflow: hidden;width:255px;height:335px;margin:178px 0 0 125px;position: relative;}
+.resumetoke{position:absolute;animation:resumetoke 2.5s linear both .5s;-webkit-animation:resumetoke 2.5s linear both .5s;background: url(../image/chat-list.png) no-repeat center center;width:255px;height:559px;}
+.resumepdf{animation:resumepdf 1s linear both 1.3s;-webkit-animation:resumepdf 1s linear both 1.3s;position: absolute;width:338px;height:100px;left:82px;top:186px;background: url(../image/chat-tip.png) no-repeat center center;}
+.resumeRight{animation:resumeRight 1s linear both .2s;-webkit-animation:resumeRight 1s linear both .2s;float:left;width:488px;height:210px;margin-top:420px;background-image:url(../image/text-title.png);background-repeat: no-repeat;background-position: center -216px;}
+@keyframes resumeleft{
+	0%{opacity:0;transform: translateX(0px);}
+	100%{opacity: 1;transform: translateX(50px);}
+}
+@-webkit-keyframes resumeleft{
+	0%{opacity: 0;-webkit-transform: translateX(0px);}
+	100%{opacity: 1;-webkit-transform: translateX(50px);}
+}
+@keyframes resumeRight{
+	0%{opacity:0;transform: translateX(100px);}
+	100%{opacity: 1;transform: translateX(50px);}
+}
+@-webkit-keyframes resumeRight{
+	0%{opacity: 0;-webkit-transform: translateX(100px);}
+	100%{opacity: 1;-webkit-transform: translateX(50px);}
+}
+@keyframes resumetoke{
+	0% {top: 0;}
+	100% {top: -224px;}
+}
+@-webkit-keyframes resumetoke{
+	0% {top: 0;}
+	100% {top: -224px;}
+}
+@keyframes resumepdf{
+	0% {opacity: 0;transform: scale(.8);top: 300px;}
+   	80% {opacity: 1;transform: scale(1.02);top: 186px;}
+	100% {opacity: 1;transform: scale(1);top: 186px;}
+}
+@-webkit-keyframes resumepdf{
+	0% {opacity: 0;-webkit-transform: scale(.8);top: 300px;}
+   	80% {opacity: 1;-webkit-transform: scale(1.02);top: 186px;}
+	100% {opacity: 1;-webkit-transform: scale(1);top: 186px;}
+}
+.othercompany{background:url(../image/bg-company.jpg) no-repeat center center;height:925px;position: relative;}
+.othercompany .inner{padding-top:180px;}
+.bigCompany{background-image: url(../image/text-title.png);background-repeat: no-repeat; background-position: center -507px;height:160px;width:100%;}
+.bigComputer{background: url(../image/figure-computer.png) no-repeat center center;height:380px;margin-top:66px;}
+.bigList{position: absolute;width:866px;height:368px;left:100px;top:400px;}
+.bigList li{position: absolute;}
+.logo1{top:177px;left:138px;}
+.logo2{top:58px;left:225px;}
+.logo3{top:256px;left:310px;}
+.logo4{top:150px;right:24px;}
+.logo5{top:58px;right:-90px;}
+.logo6{top:238px;right:-118px;}
 
 
 

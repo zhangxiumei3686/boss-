@@ -346,7 +346,11 @@ $(function(){
 		$(this).find('.img2').css('display','none');
 	})
 
-
+	$(window).scroll(function(){
+		if($('.company-pen').offset().top<=$(document).scrollTop()+$(window).height()){
+			
+		}
+	})
 })
 
 

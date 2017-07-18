@@ -320,14 +320,17 @@ $(function(){
 		})
 	})
 
-	$('.newpen li').addClass('lis');
 	var setInteCount=0;
-	var timer=setTimeout(function(){
-		setInte();		
-		clearTimeout(timer);
-	},2000);
-	function setInte(){
-		var timer1=null;
+	var appcount=0;
+	var appcount1=0;
+	var appcount2=0;
+	var appcount3=0;
+	var appcount4=0; 
+	var timer1=null;
+
+	app();
+
+	function setInte(){		
 		timer1=setInterval(function(){
 			$('.newpen li').eq(setInteCount).find('.img1').css('display','block').addClass('imgs');
 			$('.newpen li').eq(setInteCount).find('.img2').css('display','none');
@@ -346,11 +349,69 @@ $(function(){
 		$(this).find('.img2').css('display','none');
 	})
 
+	
+
 	$(window).scroll(function(){
-		if($('.company-pen').offset().top<=$(document).scrollTop()+$(window).height()){
-			
-		}
+		app();
 	})
+	function app(){
+		if($('.app-one').offset().top<=$(document).scrollTop()+$(window).height() && $('.app-one').offset().top+$('.app-one').height()>=$(document).scrollTop() && appcount4==0){
+			$('.appOneLeft').addClass('appOneLeftani');
+			$('.app-phone').addClass('appphoneani');
+			$('.appOneRight').addClass('appOneRightani');	
+			appcount4++;		
+		}
+
+		if($('.company-pen').offset().top<=$(document).scrollTop()+$(window).height() && $('.company-pen').offset().top+$('.company-pen').height()>=$(document).scrollTop() && appcount==0){
+			$('.pen-title').addClass('pentitle');
+			$('.pen-logo').addClass('penlogo');
+			$('.pen-phone').addClass('penphone');	
+			if(timer1==null){
+				$('.newpen li').addClass('lis');
+				var timer=setTimeout(function(){
+					setInte();		
+					clearTimeout(timer);
+				},2000);
+			}
+			appcount++;		
+		}
+		if($('.resume').offset().top<=$(document).scrollTop()+$(window).height() && $('.resume').offset().top+$('.resume').height()>=$(document).scrollTop() && appcount1==0){
+			$('.resumeLeft').addClass('resumeleftani');
+			$('.resumetoke').addClass('resumetokeani');
+			$('.resumepdf').addClass('resumepdfani');
+			$('.resumeRight').addClass('resumeRightani');
+			appcount1++;
+		}
+		if($('.othercompany').offset().top<=$(document).scrollTop()+$(window).height() && $('.othercompany').offset().top+$('.othercompany').height()>=$(document).scrollTop() && appcount2==0){
+			$('.bigCompany').addClass('pentitle');
+			$('.bigComputer').addClass('penphone');
+			$('.bigList li').addClass('bigListLi');
+			appcount2++;
+		}
+		if($('.salary').offset().top<=$(document).scrollTop()+$(window).height() && $('.salary').offset().top+$('.salary').height()>=$(document).scrollTop() && appcount3==0){
+			$('.salary-right').addClass('salaryrightani');
+			$('.salary-right ul').addClass('salaryulani');
+			$('.salary-left').addClass('salaryleftani');
+			$('.salary-right li').each(function(index,element){
+				$(element).addClass('cart-'+(index+1));
+			})
+			appcount3++;
+		}
+	}
+
+	var ulCount=1;
+	var ulLenght=$('.himover ul').width()/$('.himover').width();
+	setInterval(function(){
+		if(ulLenght-1==ulCount){
+			ulCount=1;
+			$('.himover ul').css('left',0);
+		}
+		$('.himover ul').animate({
+			left:-980*ulCount
+		})
+		ulCount++;
+		
+	},3000);
 })
 
 

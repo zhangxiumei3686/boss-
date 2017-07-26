@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="shortcut icon" type="image/x-icon" href="image/index.png" />
 	<script type="text/javascript" src='js/jquery-3.1.1.js'></script>
+	<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src='js/login.js'></script>
 	<!--[if IE 6]>
 	<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -15,7 +16,7 @@
 </head>
 <body>
 	<div id='login'>
-		<a href="index.html" class='login-logo'>
+		<a href="index.html" class='login-logo clearfix'>
 			<img src="image/login-logo.png">
 			<span>这一次<br>用聊天的方式找工作</span>
 		</a>
@@ -28,11 +29,60 @@
 			</ul>
 			<div class='form1'>
 				<form>
-					<div class='input1'><input type="text" name="phone" class='user'><i class='i1'></i><span class='cite'>+86<em></em></span></div>
-					<div class='input1'><input type="password" name="password" class='pass'><i class='i2'></i></div>
-					<div class='test'><img src="image/www.zhipin.com.png"><i class='i3'></i></div>
+					<div class='input1'><input type="text" name="phone" class='user'><i class='i1'></i><span class='cite'>+86<em></em></span>
+						<ul>
+							<li>中国大陆<span>+86</span></li>
+							<li>美国<span>+1</span></li>
+							<li>香港<span>+852</span></li>
+							<li>日本<span>+81</span></li>
+							<li>台湾<span>+886</span></li>
+							<li>英国<span>+44</span></li>
+							<li>韩国<span>+82</span></li>
+							<li>法国<span>+33</span></li>
+							<li>俄罗斯<span>+7</span></li>
+						</ul>
+					</div>
+					<div class='input1 input2'><input type="password" name="password" class='pass'><i class='i2'></i></div>
+					<div class='test'><input type="text" name="test"><img src="image/www.zhipin.com.png"><i class='i3'></i></div>
 					<input type="button" value="登录" class='submit'>
 				</form>
+			</div>
+			<div class='form1'>
+				<form>
+					<div class='input1'><input type="text" name="phone" class='user'><i class='i1'></i><span class='cite'>+86<em></em></span>
+						<ul>
+							<li>中国大陆<span>+86</span></li>
+							<li>美国<span>+1</span></li>
+							<li>香港<span>+852</span></li>
+							<li>日本<span>+81</span></li>
+							<li>台湾<span>+886</span></li>
+							<li>英国<span>+44</span></li>
+							<li>韩国<span>+82</span></li>
+							<li>法国<span>+33</span></li>
+							<li>俄罗斯<span>+7</span></li>
+						</ul>
+					</div>
+					
+					<div class='test'><input type="text" name="test"><img src="image/www.zhipin.com.png"><i class='i3'></i></div>
+					<div class='message'><input type="text" name="message" class='mess'><i class='i2'></i><span>发送验证码</span></div>
+					<input type="button" value="登录" class='submit'>
+				</form>
+			</div>
+			<div class='form1 form2'>
+				<p class='code'>使用 BOSS直聘 APP 扫码登录 <span>扫码帮助</span><em></em></p>
+				<div class='codeimg'><img src="image/code.jpeg"></div>
+				<div class='codeRight'>
+					<div class='scan-help-top'>
+						<ul>
+							<li class='scan-help-topli1'>我是BOSS</li>
+							<li class='scan-help-topli2'>我是牛人</li>
+						</ul>
+					</div>
+					<ul class='scan-help-down'>
+						<li><img src="image/icon-help-boss.png"></li>
+						<li><img src="image/icon-help-geek.png"></li>
+					</ul>
+				</div>
 			</div>
 			<p class='noregite'>没有账号 <a href='#'>立即注册</a></p>
 		</div>

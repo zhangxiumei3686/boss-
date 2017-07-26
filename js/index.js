@@ -265,20 +265,69 @@ $(function(){
 
 	var jobIndex=0;
 	var jobIndexNext=0;
+	//存储上一个dd脚标
+	var tempCo=0;
+	//临时交换脚标
+	var tempnum=0;
+	//记录两次点击的dd是否为一个dd
+	var obj=null;
+	
 	$('.job-listfir .job-listfir,.job-listfir .job-list').css('display','none');
 	$('.job-top>dd').click(function(){
 		var temp=$(this).text();
-		var tempindex=$(this).index($('.job-listfir>dd'));
+		if($(this).get(0).ind==undefined){
+			var tempindex=$(this).index()-1;
+			$(this).get(0).ind=tempindex;
+		}
+		
+		
 		$(this).text($('.prespan').text());
 		$('.prespan').text(temp);
 		$(this).parent().find('i').eq(0).css('display','inline-block');
+
+		if(obj!=this&&obj!=null){
+			$('.listLimitpre').text('不限');
+			$('.listLimitnext').css('display','none');
+			$('.job-top i').eq(1).css('display','none');
+		}
+
+		if($('.prespan').text()=='全国'){
+			$('.job-listse').find('.job-listfir').each(function(index,element){
+				$(element).css('display','none');
+			})
+			$('.job-listse').find('.job-list').each(function(index,element){
+				$(element).css('display','none');
+			})
+			$('.listLimitpre').css('display','none');
+			$('.listLimitnext').css('display','none');
+			$('.job-top i').css('display','none');
+			return;
+		}
+
 		$('.listLimitpre').css('display','inline-block');
-		$('.job-listse').eq(tempindex).find('.job-listfir').css('display','block');
-		$('.job-listse').eq(tempindex).find('.job-listfir dd').click(function(){
+		$('.job-listse').find('.job-listfir').each(function(index,element){
+			$(element).css('display','none');
+		})
+		$('.job-listse').find('.job-list').each(function(index,element){
+			$(element).css('display','none');
+		})
+		$('.job-listse').eq($(this).get(0).ind).find('.job-listfir').css('display','block');
+		
+		$('.job-listse').eq($(this).get(0).ind).find('.job-listfir dd').click(function(){
 			$('.job-top i').eq(1).css('display','inline-block');
 			$('.listLimitnext').css('display','inline-block');
-			$(this).parent().css('display','none');
-			$('.job-listse').eq(tempindex).find('.job-list').css('display','block');
+			
+			if($(this).text()!='不限'){
+				$(this).parent().css('display','none');
+				$('.job-listse').eq(tempindex).find('.job-list').css('display','block');
+			}else{
+				$('.listLimitnext').css('display','none');
+				$('.job-top i').eq(1).css('display','none');
+			}		
+			$('.job-listse').eq(tempindex).find('.job-listfir dd').each(function(index,element){
+				$(element).removeClass('active');
+			})
+			$(this).addClass('active');	
 			$('.listLimitpre').text($(this).text());
 			jobIndex=$(this).index()-1;
 		})
@@ -292,6 +341,9 @@ $(function(){
 		})
 
 		$('.listLimitpre').click(function(index,element){
+			$('.job-listse').find('.job-listfir').each(function(index,element){
+				$(element).css('display','none');
+			})
 			$('.job-listse').eq(tempindex).find('.job-listfir').css('display','block');
 			$('.job-listse').eq(tempindex).find('.job-list').css('display','none');
 			$('.job-listse').eq(tempindex).find('.job-listfir dd').removeClass('active');
@@ -318,6 +370,13 @@ $(function(){
 			jobIndexNext=0;
 			jobIndex=0;
 		})
+		
+		tempnum=tempCo;
+		tempCo=$(this).get(0).ind;
+		$(this).get(0).ind=tempnum;
+
+		obj=this;
+
 	})
 
 	var setInteCount=0;
@@ -398,20 +457,27 @@ $(function(){
 			appcount3++;
 		}
 	}
-
 	var ulCount=1;
+	//var appCount=0;
+	var apptimer=null;
+	
 	var ulLenght=$('.himover ul').width()/$('.himover').width();
-	setInterval(function(){
-		if(ulLenght-1==ulCount){
-			ulCount=1;
-			$('.himover ul').css('left',0);
-		}
-		$('.himover ul').animate({
-			left:-980*ulCount
-		})
-		ulCount++;
-		
-	},3000);
+	appfun();
+	function appfun(){
+
+		apptimer=setInterval(function(){
+			if(ulLenght-1==ulCount){
+				ulCount=1;
+				$('.himover ul').css('left',0);
+			}
+			$('.himover ul').animate({
+				left:-980*ulCount
+			})
+			ulCount++;
+			
+		},3000);
+	}
+	
 })
 
 

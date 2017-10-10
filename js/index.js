@@ -276,8 +276,11 @@ $(function(){
 	$('.job-top>dd').click(function(){
 		var temp=$(this).text();
 		if($(this).get(0).ind==undefined){
+
 			var tempindex=$(this).index()-1;
+			//alert(tempindex)
 			$(this).get(0).ind=tempindex;
+			//alert($(this).get(0).ind)
 		}
 		
 		
@@ -311,6 +314,11 @@ $(function(){
 		$('.job-listse').find('.job-list').each(function(index,element){
 			$(element).css('display','none');
 		})
+		$('.job-listse').each(function(index,element){
+			$(element).css('display','none');
+		})
+		//alert($(this).get(0).ind)
+		$('.job-listse').eq($(this).get(0).ind).css('display','block');
 		$('.job-listse').eq($(this).get(0).ind).find('.job-listfir').css('display','block');
 		
 		$('.job-listse').eq($(this).get(0).ind).find('.job-listfir dd').click(function(){
